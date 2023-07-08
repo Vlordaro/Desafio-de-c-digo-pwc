@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
 public class anagrama {
@@ -24,11 +25,15 @@ public class anagrama {
     }
     
     public static void main(String[] args) {
-        String word = "racecar";
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite um anagrama: ");
+        String word = scanner.nextLine();
         if (AnagramOfPalindrome(word)) {
             System.out.println(" true");
         } else {
             System.out.println("false");
+            scanner.close();
         }
     }
 }
