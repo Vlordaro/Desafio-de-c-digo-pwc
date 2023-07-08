@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 public class palindromo {
@@ -35,11 +36,15 @@ public class palindromo {
 
     //Método main
     public static void main(String[] args) {
-        String palavra = "babad";
-        List<String> palindromas = substringsPalindromicas(palavra);
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite uma palavra palindroma: ");
+        String input = scanner.nextLine();
+        List<String> palindromas = substringsPalindromicas(input);
         System.out.println("Substrings palindrômicas:");
         for (String palindroma : palindromas) {
             System.out.println(palindroma);
+            scanner.close();
         }
     }
 }
