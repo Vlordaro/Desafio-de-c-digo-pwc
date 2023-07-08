@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Inverter {
     //método para reverter a ordem das palavras
     public static String reverseOrderOfWords(String input) {
@@ -13,8 +14,12 @@ public class Inverter {
 
 //Método Main
     public static void main(String[] args) {
-        String input = "Hello, World! OpenAI is amazing.";
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite a frase: ");
+        String input = scanner.nextLine();
         String reversed = reverseOrderOfWords(input);
         System.out.println(reversed);
+        scanner.close();
     }
 }
