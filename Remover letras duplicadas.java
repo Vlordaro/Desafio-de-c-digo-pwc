@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class remover {
     //Mátodo para remoção dos caracteres duplicados
     public static String duplicate(String input) {
@@ -12,9 +13,12 @@ public class remover {
     }
     //Método main
     public static void main(String[] args) {
-        String input = "Hello, World!";
+        Scanner scanner = new Scanner(System.in);
+    System.out.print("Digite uma frase: ");
+        String input = scanner.nextLine();
         String removed = duplicate(input);
         System.out.println(removed);
+        scanner.close();
     
 }
 
