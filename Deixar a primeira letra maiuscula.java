@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class maiuscula {
     //Método para deixar cada palavra maiuscula 
     public static String capitalize(String input) {
@@ -18,9 +19,12 @@ public class maiuscula {
     }
     
 public static void main(String args[])  {
-        String input = "hello, how are you? i'm fine, thank you.";
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Digite uma frase: ");
+        String input = scanner.nextLine();
         String uppercase = capitalize(input);
         System.out.println(uppercase);
+        scanner.close();
     } 
 
 }
