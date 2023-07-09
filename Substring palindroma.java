@@ -40,7 +40,7 @@ public class palindromo {
         System.out.print("Digite uma palavra palindroma: ");
         String input = scanner.nextLine();
         String maiorPalindroma = maiorPalindroma(input);
-        System.out.println("Maior palavra palindrômica: " + maiorPalindroma);
+        System.out.println("Maior palavra palindroma: " + maiorPalindroma);
 
         scanner.close();
     }
