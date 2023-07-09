@@ -1,21 +1,20 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
+
 public class palindromo {
- public static List<String> substringsPalindromicas(String palavra) {
-        List<String> palindromas = new ArrayList<>();
+    public static String maiorPalindroma(String palavra) {
+        String maiorPalindroma = "";
 
         // Percorre todas as possíveis substrings
         for (int i = 0; i < palavra.length(); i++) {
             for (int j = i + 1; j <= palavra.length(); j++) {
                 String substr = palavra.substring(i, j);
-                if (isPalindroma(substr)) {
-                    palindromas.add(substr);
+                if (isPalindroma(substr) && substr.length() > maiorPalindroma.length()) {
+                    maiorPalindroma = substr;
                 }
             }
         }
 
-        return palindromas;
+        return maiorPalindroma;
     }
 
     // Método auxiliar para verificar se uma string é palindrômica
@@ -37,14 +36,12 @@ public class palindromo {
     //Método main
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("Digite uma palavra palindroma: ");
         String input = scanner.nextLine();
-        List<String> palindromas = substringsPalindromicas(input);
-        System.out.println("Substrings palindrômicas:");
-        for (String palindroma : palindromas) {
-            System.out.println(palindroma);
-            scanner.close();
-        }
+        String maiorPalindroma = maiorPalindroma(input);
+        System.out.println("Maior palavra palindrômica: " + maiorPalindroma);
+
+        scanner.close();
     }
 }
